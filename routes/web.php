@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Models\Student;
+use App\Models\StudentClass;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('student.index');
+    $classes = StudentClass::all();
+    $students = Student::latest()->get();
+    return view('student.index', compact('students','classes'));
 }); 
 
 Route::prefix('student')->group(function(){

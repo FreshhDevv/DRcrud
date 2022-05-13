@@ -24,19 +24,19 @@
                         </thead>
                         <tbody>
                             @foreach ($students as $student => $classes )
-                                
-                            @endforeach
                             <tr>
                                 <td>Mark</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
                                 <td>@mdo</td>
                                 <td>
-                                            <a href="" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
-                                            <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>
-                                        </td>
+                                    <a href="" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
+                                    <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>
+                                </td>
                             </tr>
+                            @endforeach
                             
+
                         </tbody>
                     </table>
                 </div>

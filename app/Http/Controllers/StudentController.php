@@ -9,7 +9,7 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $students = Student::all();
+        $students = Student::latest()->get();
         return view('student.index', compact('students'));
     }
 

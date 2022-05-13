@@ -13,35 +13,32 @@
                     </a>
                     <br><br>
                     <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Class</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Number</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($students as $student => $classes )
+                                
+                            @endforeach
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>
+                                            <a href="" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
+                                            <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>
+                                        </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

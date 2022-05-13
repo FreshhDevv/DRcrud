@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('student.welcome');
+    return view('student.index');
 }); 
 
 Route::prefix('student')->group(function(){

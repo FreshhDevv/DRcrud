@@ -12,8 +12,8 @@ class StudentClass extends Model
         'class',
     ];
 
-    public function studentRelation()
+    public function student()
     {
-        return $this->hasMany(Student::class, 'class_id', 'id');
+        return $this->hasMany(Student::class);
     }
 }

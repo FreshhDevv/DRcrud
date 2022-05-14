@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function create()
+    public function AddStudent()
     {
-        return view('students.create');
+        return view('student.create_student');
     }
 
     public function store(Request $request)

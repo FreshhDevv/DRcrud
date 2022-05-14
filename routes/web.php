@@ -23,5 +23,5 @@ Route::get('/', function () {
 }); 
 
 Route::prefix('student')->group(function(){
-    Route::get('/all', [StudentController::class, 'View']);
+    Route::get('/add', [StudentController::class, 'AddStudent'])->name('student.add');
 });

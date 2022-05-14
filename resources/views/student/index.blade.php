@@ -8,7 +8,7 @@
                     <h2>DR CRUD</h2>
                 </div>
                 <div class="card-body">
-                    <a href="" class="btn btn-success btn-sm" title="Add New Student">
+                    <a href="{{ route('student.add') }}" class="btn btn-success btn-sm" title="Add New Student">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add Student
                     </a>
                     <br><br>
@@ -25,10 +25,9 @@
                         <tbody>
                             @foreach ($students as $student => $classes )
                             <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td></td>
+                                <td>{{ $classes->class->class }}</td>
+                                
                                 <td>
                                     <a href="" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
                                     <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>

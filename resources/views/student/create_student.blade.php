@@ -13,8 +13,10 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Class</label>
-                <select class="form-control" name="">
-
+                <select class="form-control" name="class_id">
+                    @foreach($classes as $class)
+                        <option value="{{ $class->id }}">{{ $class->class }}</option>
+                    @endforeach
                 </select>
                 @error('class')
                 <span class="text-danger">{{ $message }}</span>

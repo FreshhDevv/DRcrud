@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $classes = StudentClass::all();
+    $classes = StudentClass::get();
     $students = Student::latest()->get();
     return view('student.index', compact('students','classes'));
 }); 

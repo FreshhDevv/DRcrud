@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-
+use App\Models\StudentClass;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function AddStudent()
     {
-        return view('student.create_student');
+        $classes= StudentClass::all();
+        return view('student.create_student', compact('classes'));
     }
 
     public function StoreStudent(Request $request)
@@ -18,13 +19,13 @@ class StudentController extends Controller
         $request->validate(
             [
                 'name' => 'required',
-                'class' => 'required',
+                'class_id' => 'required',
                 'email' => 'required',
                 'number' => 'required',
             ],
             [
                 'name.required' => 'The Student Name is required',
-                'class.required' => 'The Student Class is required',
+                'class_id.required' => 'The Student Class is required',
                 'email.required' => 'The Student Email is required',
                 'number.required' => 'The Student Number is required',
             ]
@@ -33,7 +34,7 @@ class StudentController extends Controller
         
         Student::insert([
             'name' => $request->name,
-            'class_id' => $request->get('class_id'),
+            'class_id' => $request->class_id,
             'email' => $request->email,
             'number' => $request->number,
         ]);
@@ -42,9 +43,7 @@ class StudentController extends Controller
             'message' => 'Student Added Successfully',
             'alert-type' => 'success'
         );
-        return redirect()->back()->with($notification);
-
-        // $input = $request->all();
+        return view('student.index', compact('students','classes'));        
         // Student::create($input);
         // return redirect('student')->with('flash_message', 'Student Added');
     }

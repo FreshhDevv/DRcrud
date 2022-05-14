@@ -37,11 +37,41 @@
                                 </td>
                             </tr>
                             @endforeach
-                            
+
 
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <form>
+                    <div class="card-header">
+                        <h2>Add Class</h2>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" name="name" placeholder="Class">
+                            <br>
+                            <a href="{{ route('student.add') }}" class="btn btn-success btn-sm" title="Add New Student">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add Class
+                        </a>
+                            @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                    
+
+
+
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>

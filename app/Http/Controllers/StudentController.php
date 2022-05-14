@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-use App\Models\StudentClass;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -30,11 +30,10 @@ class StudentController extends Controller
             ]
         );
 
-        StudentClass::insert([
-            'class' => $request->class,
-        ]);
+        
         Student::insert([
             'name' => $request->name,
+            'class_id' => $request->get('class_id'),
             'email' => $request->email,
             'number' => $request->number,
         ]);

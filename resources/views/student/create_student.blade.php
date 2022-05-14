@@ -12,8 +12,10 @@
                 @enderror
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword4">Class</label>
-                <input type="text" class="form-control" name="class" placeholder="Class">
+                <label>Class</label>
+                <select class="form-control" name="">
+
+                </select>
                 @error('class')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror

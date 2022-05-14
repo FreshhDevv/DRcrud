@@ -7,10 +7,23 @@ use Illuminate\Http\Request;
 
 class StudentClassController extends Controller
 {
-    public function AddClass(Request $request)
+    public function StoreClass(Request $request)
     {
-        StudentClass::insert([
+        $request->validate(
+            [
+                'class' => 'required',
+               
+            ],
+            [
+                'class.required' => 'The Class Name is required',
+            ]
+        );
+
+        StudentClass::insertOrIgnore([
             'class' => $request->class,
+            
         ]);
+        
+        return redirect()->back();
     }
 }

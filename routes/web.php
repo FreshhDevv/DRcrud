@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentClassController;
 use App\Http\Controllers\StudentController;
 use App\Models\Student;
 use App\Models\StudentClass;
@@ -26,4 +27,6 @@ Route::prefix('student')->group(function(){
     Route::get('/add', [StudentController::class, 'AddStudent'])->name('student.add');
 
     Route::post('/store', [StudentController::class, 'StoreStudent'])->name('student.store');
+
+    Route::post('/class/store', [StudentClassController::class, 'StoreClass'])->name('class.store');
 });

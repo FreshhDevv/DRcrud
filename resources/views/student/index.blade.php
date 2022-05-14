@@ -44,9 +44,11 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-3">
             <div class="card">
-                <form>
+                <form method="post" action="{{ route('class.store') }}">
+                    @csrf
                     <div class="card-header">
                         <h2>Add Class</h2>
                     </div>
@@ -54,12 +56,11 @@
                         
                         <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" name="name" placeholder="Class">
-                            <br>
-                            <a href="{{ route('student.add') }}" class="btn btn-success btn-sm" title="Add New Student">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add Class
-                        </a>
-                            @error('name')
+                            <input type="text" class="form-control" name="class" placeholder="Class">
+                            <div class="text-xs-right">
+            <input type="submit" class="btn btn-rounded btn-success  mt-5 mb-5" value="Add Class">
+        </div>
+                            @error('class')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

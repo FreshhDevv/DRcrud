@@ -21,19 +21,19 @@ class StudentController extends Controller
 
     public function show($id) 
     {
-        $student = Student::find($id);
+        $student = Student::findOrFail($id);
         return view('student.show', compact('student'));
     }
 
     public function edit($id)
     {
-        $student = Student::find($id);
+        $student = Student::findOrFail($id);
         return view('student.edit', compact('student'));
     }
 
     public function update(Request $request, $id)
     {
-        $student = Student::find($id);
+        $student = Student::findOrFail($id);
         $input = $request->all();
         $student->update($input);
         return redirect('student')->with('flash_message', 'Student updated');
@@ -41,7 +41,7 @@ class StudentController extends Controller
 
     public function delete($id)
     {
-        Student::destroy($id);
+        Student::findOrFail($id)->delete();
         return redirect('student')->with('flash_message', 'Student deleted');
     }
 }

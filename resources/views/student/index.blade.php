@@ -23,11 +23,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($students as $student => $classes )
+                            @foreach ($students as $student )
                             <tr>
-                                <td></td>
-                                <td>{{ $classes->class->class }}</td>
-                                
+                                <td>{{ $student->name }}</td>
+                                @foreach ($classes as $class)
+                                <td>{{ $class->class }}</td>
+                                @endforeach
+                                <td>{{ $student->email }}</td>
+                                <td>{{ $student->number }}</td>
                                 <td>
                                     <a href="" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
                                     <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>

@@ -24,4 +24,6 @@ Route::get('/', function () {
 
 Route::prefix('student')->group(function(){
     Route::get('/add', [StudentController::class, 'AddStudent'])->name('student.add');
+
+    Route::post('/store', [StudentController::class, 'StoreStudent'])->name('student.store');
 });

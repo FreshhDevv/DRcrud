@@ -26,13 +26,11 @@
                             @foreach ($students as $student)
                             <tr>
                                 <td>{{ $student->name }}</td>
-                                
                                 <td>Class {{ $student->class->class }}</td>
-                                
                                 <td>{{ $student->email }}</td>
                                 <td>{{ $student->number }}</td>
                                 <td>
-                                    <a href="" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
+                                    <a href="{{ route('student.edit', $student->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
                                     <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>
                                 </td>
                             </tr>

@@ -47,24 +47,20 @@ class StudentController extends Controller
         
     }
 
-    public function show($id) 
+    public function EditStudent($id) 
     {
         $student = Student::findOrFail($id);
-        return view('student.show', compact('student'));
+        return view('student.edit_student', compact('student'));
     }
 
-    public function edit($id)
-    {
-        $student = Student::findOrFail($id);
-        return view('student.edit', compact('student'));
-    }
+    
 
-    public function update(Request $request, $id)
+    public function UpdateStudent(Request $request, $id)
     {
         $student = Student::findOrFail($id);
         $input = $request->all();
         $student->update($input);
-        return redirect('student')->with('flash_message', 'Student updated');
+        return redirect('/')->with('flash_message', 'Student updated');
     }
 
     public function delete($id)

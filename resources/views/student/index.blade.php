@@ -42,7 +42,9 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Add Class form -->
+
         <div class="col-3">
             <div class="card">
                 <form method="post" action="{{ route('class.store') }}">
@@ -51,20 +53,20 @@
                         <h2>Add Class</h2>
                     </div>
                     <div class="card-body">
-                        
+
                         <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" name="class" placeholder="Class">
-                            <div class="text-xs-right">
-            <input type="submit" class="btn btn-rounded btn-success  mt-5 mb-5" value="Add Class">
-        </div>
-                            @error('class')
-                            <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="class" placeholder="Class">
+                                <div class="text-xs-right">
+                                    <input type="submit" class="btn btn-rounded btn-success  mt-5 mb-5" value="Add Class">
+                                </div>
+                                @error('class')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
                         </div>
 
-                    </div>
-                    
 
 
 

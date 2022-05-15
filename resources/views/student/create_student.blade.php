@@ -15,7 +15,7 @@
                 <label>Class</label>
                 <select class="form-control" name="class_id">
                     @foreach($classes as $class)
-                        <option value="{{ $class->id }}">{{ $class->class }}</option>
+                    <option value="{{ $class->id }}">{{ $class->class }}</option>
                     @endforeach
                 </select>
                 @error('class')

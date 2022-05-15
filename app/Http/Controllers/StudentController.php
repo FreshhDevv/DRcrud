@@ -10,7 +10,7 @@ class StudentController extends Controller
 {
     public function AddStudent()
     {
-        $classes= StudentClass::all();
+        $classes = StudentClass::all();
         return view('student.create_student', compact('classes'));
     }
 
@@ -31,7 +31,7 @@ class StudentController extends Controller
             ]
         );
 
-        
+
         Student::insert([
             'name' => $request->name,
             'class_id' => $request->class_id,
@@ -44,28 +44,25 @@ class StudentController extends Controller
             'alert-type' => 'success'
         );
         return redirect('/');
-        
     }
 
-    public function EditStudent($id) 
+    public function EditStudent($id)
     {
         $student = Student::findOrFail($id);
         return view('student.edit_student', compact('student'));
     }
-
-    
 
     public function UpdateStudent(Request $request, $id)
     {
         $student = Student::findOrFail($id);
         $input = $request->all();
         $student->update($input);
-        return redirect('/')->with('flash_message', 'Student updated');
+        return redirect('/');
     }
 
     public function DeleteStudent($id)
     {
         Student::findOrFail($id)->delete();
-        return redirect('/')->with('flash_message', 'Student deleted');
+        return redirect('/');
     }
 }

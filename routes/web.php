@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $classes = StudentClass::get();
+    // $classes = StudentClass::all();
     $students = Student::latest()->get();
-    return view('student.index', compact('students','classes'));
+    return view('student.index', compact('students'));
 }); 
 
 Route::prefix('student')->group(function(){

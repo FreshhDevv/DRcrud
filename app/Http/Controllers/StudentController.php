@@ -43,9 +43,8 @@ class StudentController extends Controller
             'message' => 'Student Added Successfully',
             'alert-type' => 'success'
         );
-        return view('student.index', compact('students','classes'));        
-        // Student::create($input);
-        // return redirect('student')->with('flash_message', 'Student Added');
+        return redirect('/');
+        
     }
 
     public function show($id) 

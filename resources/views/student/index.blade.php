@@ -26,9 +26,8 @@
                             @foreach ($students as $student)
                             <tr>
                                 <td>{{ $student->name }}</td>
-                                @foreach ($classes as $class)
-                                <td>{{ $class->class }}</td>
-                                @endforeach
+                                
+                                <td>Class {{ $student->class->class }}</td>
                                 
                                 <td>{{ $student->email }}</td>
                                 <td>{{ $student->number }}</td>

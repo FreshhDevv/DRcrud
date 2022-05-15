@@ -31,7 +31,7 @@
                                 <td>{{ $student->number }}</td>
                                 <td>
                                     <a href="{{ route('student.edit', $student->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>
-                                    <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>
+                                    <a href="{{ route('student.delete', $student->id) }}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i>Delete</a>
                                 </td>
                             </tr>
                             @endforeach

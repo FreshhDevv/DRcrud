@@ -63,9 +63,9 @@ class StudentController extends Controller
         return redirect('/')->with('flash_message', 'Student updated');
     }
 
-    public function delete($id)
+    public function DeleteStudent($id)
     {
         Student::findOrFail($id)->delete();
-        return redirect('student')->with('flash_message', 'Student deleted');
+        return redirect('/')->with('flash_message', 'Student deleted');
     }
 }

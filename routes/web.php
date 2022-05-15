@@ -33,4 +33,6 @@ Route::prefix('student')->group(function(){
     Route::get('/edit/{id}',[StudentController::class, 'EditStudent'])->name('student.edit');
 
     Route::post('/update/{id}', [StudentController::class, 'UpdateStudent'])->name('student.update');
+
+    Route::get('/delete/{id}', [StudentController::class, 'DeleteStudent'])->name('student.delete');
 });
